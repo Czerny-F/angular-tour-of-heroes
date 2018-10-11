@@ -4,14 +4,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeroService } from './hero.service';
 
 describe('HeroService', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [
-      HttpClientModule,
-    ]
-  }));
+  let service: HeroService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+      ]
+    });
+    service = TestBed.get(HeroService);
+  });
 
   it('should be created', () => {
-    const service: HeroService = TestBed.get(HeroService);
     expect(service).toBeTruthy();
   });
 });
